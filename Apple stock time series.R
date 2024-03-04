@@ -116,7 +116,7 @@ aapl_ret_arch_test # Inference : Return Series is Heteroskedastic (Has Volatilit
 
 
 # GARCH Model
-garch_model1 = ugarchspec(variance.model = list(model = 'sGARCH', garchOrder = c(1,1)), mean.model = list(armaOrder = c(0,0), include.mean = TRUE))
+garch_model1 = ugarchspec(variance.model = list(model = 'sGARCH', garchOrder = c(1,1)), mean.model = list(armaOrder = c(1,10), include.mean = TRUE))
 aapl_ret_garch1 = ugarchfit(garch_model1, data = aapl_ret); aapl_ret_garch1
 
 garch_model2 = ugarchspec(variance.model = list(model = 'sGARCH', garchOrder = c(1,1)), mean.model = list(armaOrder = c(1,5), include.mean = FALSE))
